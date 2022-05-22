@@ -14,7 +14,7 @@ def sumy_summarizer(docx):
     lex_summarizer = LexRankSummarizer()
     summary = lex_summarizer(parser.document, 3)
     summary_list = [st(sentence) for sentence in summary]
-    result = " ".join(sumary_list)
+    result = " ".join(summary_list)
     return result
                                                        
                                                        
@@ -29,16 +29,16 @@ def main():
   choice = st.sidebar.selectbox("Select Activity", activities)
   
   if choice == "Summarize":
-    st.subheader("Summarz with NLP")
+    st.subheader("Summary with NLP")
     raw.text = st.text_area("Enter Text Here", "Type Here")
     summary_choice = st.selectbox("Summary Choice", ["Gensim", "Sumy Lex Rank"]                                                            
     if st.button("Summarize"):
                                                   
-      if sumary_choice == "Gensim":
+      if summary_choice == "Gensim":
          summary_result = summarizer(raw_text)
       
        elif summary_choice == "Sumy Lex Rank":
-            sumary_result = sumy_sumarizer(raw_text)
+            summary_result = sumy_summarizer(raw_text)
                                   
        st.write(summary_result)
      

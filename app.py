@@ -1,6 +1,11 @@
 import streamlit as st
 
 #NLP
+import spacy
+nlp= spacy.load("en")
+from spacz import displacy
+HTML_WRAPPER = """<div style="overflow-x: auto; border: 1px solid #e6e9ef; border-radius: 0.25rem; padding: 1rem">()</div>"""
+
 #Summary Packages
 from gensim.summarization import summarize
 #Sumy PKG
@@ -17,7 +22,11 @@ def sumy_summarizer(docx):
     result = " ".join(summary_list)
     return result
                                                        
-                                                       
+#NLP
+@st.cache(allow_output_mutation=True)
+def analyze_text(text):
+    return nlp(text) 
+
 #Webscaping Packages
 
 def main():
@@ -31,16 +40,25 @@ def main():
   if choice == "Summarize":
     st.subheader("Summary with NLP")
     raw.text = st.text_area("Enter Text Here", "Type Here")
-    summary_choice = st.selectbox("Summary Choice", ["Gensim", "Sumy Lex Rank"]                                                           
+    summary_choice = st.selectbox("Summary Choice", ["Gensim", "Sumy Lex Rank"])                                                          
     if st.button("Summarize"):
+                                  
        if summary_choice == "Gensim":
          summary_result = summarizer(raw_text)
       
        elif summary_choice == "Sumy Lex Rank":
             summary_result = sumy_summarizer(raw_text)
-                                  
+       
        st.write(summary_result)
-     
+        
+    if choice == "NER Checker":
+        st.subheader("Entity Recognition with Spacy")
+        raw.text = st.text_area("Enter Text Here", "Type Here")
+        if st.button("Analyze):
+           #NLP
+           docx = analyze_text(raw_text)                       
+       
+      
    
   
 if __name__ == "__main__":

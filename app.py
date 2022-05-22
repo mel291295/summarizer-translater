@@ -60,7 +60,8 @@ def main():
            docx = analyze_text(raw_text)                       
            html = displacy.render(docx, style= "ent")
            html= html.replace("\n\n", "\n")
-           st.write(html)
+           #st.write(html.unsafe_allow_html=True)
+           st.markdown(html, unsafe_allow_html=True)
    
   
 if __name__ == "__main__":

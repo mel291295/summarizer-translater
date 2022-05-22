@@ -36,7 +36,7 @@ from urllib.request import urlopen
 def get_text(raw_url):
     page = urlopen(raw_url)
     soup = BeautifulSoup(page)
-    fetched_text = " .join(map(lamba p:p.text.soup.find_all(p)))
+    fetched_text = " ".join(map(lamba p:p.text.soup.find_all(p)))
     return fetched_text
 
 def main():
@@ -75,11 +75,20 @@ def main():
      if choice == "NER for URL":
         st.subheader("Analzye text from URL")
         raw_url = st.text_input("Enter URL", "Type here")
+        text_length = st.slider("Length to preview", 50, 100)
         if st.button("Extract"):
             if raw_url != "Type here":
                 result = get_text(raw_url)
                 len_of_full_text = len(result)
-                st.write(result)
+                len_of_short_text = round(len(result)/ text length)
+                
+                st.write(result: len_of_short_text)
+                summary_docx = sumy_summarizer(result)
+                docx = analyze_text(summary_docx)
+                html = displacy.render(docx, style= "ent")
+                html= html.replace("\n\n", "\n")
+                #st.write(html.unsafe_allow_html=True)
+                st.markdown(html, unsafe_allow_html=True)
             
 if __name__ == "__main__":
   main()

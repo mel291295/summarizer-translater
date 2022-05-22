@@ -31,10 +31,9 @@ def main():
   if choice == "Summarize":
     st.subheader("Summary with NLP")
     raw.text = st.text_area("Enter Text Here", "Type Here")
-    summary_choice = st.selectbox("Summary Choice", ["Gensim", "Sumy Lex Rank"]                                                            
+    summary_choice = st.selectbox("Summary Choice", ["Gensim", "Sumy Lex Rank"]                                                           
     if st.button("Summarize"):
-                                                  
-      if summary_choice == "Gensim":
+       if summary_choice == "Gensim":
          summary_result = summarizer(raw_text)
       
        elif summary_choice == "Sumy Lex Rank":

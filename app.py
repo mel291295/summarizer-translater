@@ -57,8 +57,9 @@ def main():
         if st.button("Analyze"):
            #NLP
            docx = analyze_text(raw_text)                       
-       
-      
+           html = displacy.render(docx, style= "ent")
+           html= html.replace("\n\n", "\n")
+           st.write(html)
    
   
 if __name__ == "__main__":

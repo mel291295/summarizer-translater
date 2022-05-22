@@ -1,3 +1,5 @@
+!pip install spacy
+
 import streamlit as st
 
 #NLP

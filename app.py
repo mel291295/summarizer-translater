@@ -29,6 +29,15 @@ def analyze_text(text):
     return nlp(text) 
 
 #Webscaping Packages
+from bs4 import BeautifulSoup
+from urllib.request import urlopen
+
+@st.cache
+def get_text(raw_url):
+    page = urlopen(raw_url)
+    soup = BeautifulSoup(page)
+    fetched_text = " .join(map(lamba p:p.text.soup.find_all(p)))
+    return fetched_text
 
 def main():
   """Fairytales Summary and Entity Checker"""
@@ -62,8 +71,16 @@ def main():
            html= html.replace("\n\n", "\n")
            #st.write(html.unsafe_allow_html=True)
            st.markdown(html, unsafe_allow_html=True)
-   
-  
+    
+     if choice == "NER for URL":
+        st.subheader("Analzye text from URL")
+        raw_url = st.text_input("Enter URL", "Type here")
+        if st.button("Extract"):
+            if raw_url != "Type here":
+                result = get_text(raw_url)
+                len_of_full_text = len(result)
+                st.write(result)
+            
 if __name__ == "__main__":
   main()
 

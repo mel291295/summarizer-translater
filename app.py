@@ -54,7 +54,7 @@ def main():
     if choice == "NER Checker":
         st.subheader("Entity Recognition with Spacy")
         raw.text = st.text_area("Enter Text Here", "Type Here")
-        if st.button("Analyze):
+        if st.button("Analyze"):
            #NLP
            docx = analyze_text(raw_text)                       
        

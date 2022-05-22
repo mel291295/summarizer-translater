@@ -10,7 +10,7 @@ from sumy.summarizer.lex_rank import LexRankSummarizer
 
 #Funktion for Sumy Summarization
 def sumy_summarizer(docx):
-    parser = PlaintextParser.from_string(docx, Tokenizer("english))
+    parser = PlaintextParser.from_string(docx, Tokenizer("english"))
     lex_summarizer = LexRankSummarizer()
     summary = lex_summarizer(parser.document, 3)
     summary_list = [st(sentence) for sentence in summary]

@@ -1,5 +1,4 @@
 #Python
-
 #importing the libraries
 from gensim.summarization import summarize
 from sumy.parsers.plaintext import PlaintextParser

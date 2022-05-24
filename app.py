@@ -1,7 +1,4 @@
 #Python
-pip install streamlit
-pip install gensim
-pip install sumy
 
 #importing the libraries
 import streamlit as st

@@ -12,7 +12,7 @@ def main():
     st.title("Summary and Text Preprocessing of Fairy Tales")
     
     #give the user the option to choose between Text Summarization, Text processing and Translation
-    activity1 = ["Summarize","Text Preprocessing", "Translation]
+    activity1 = ["Summarize","Text Preprocessing", "Translation"]
     choice = st.sidebar.selectbox("Select Function",activity1)
             
 if __name__ == "__main__":

@@ -1,6 +1,8 @@
 #Python
 #importing the libraries
 import streamlit as st
+import gensim
+import sumy
 from gensim.summarization import summarize
 from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer

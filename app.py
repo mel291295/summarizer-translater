@@ -48,7 +48,7 @@ def main():
         raw_text = st.text_area("Enter Text Here", "Type Here")
         if st.button("Summarize"):
            summary_choice = st.selectbox("Select choice", ["Gensim", "Sumy Lex Rank"])   
-            st.write(summary_result)
+            
     
      if choice == "Entity Checker"
                 

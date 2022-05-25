@@ -71,28 +71,6 @@ if choose == "Chinese":
         audio_bytes = audio_file.read()
         st.audio(audio_bytes, format="audio/mp3", start_time=0) #displays the audio player 
   
- elif choose == "French":
-
-    if st.button("Show Translation and Audio"):
-        output='fr'
-        audio_file, translation_text = translation_func(input, output, text)
-
-        st.write('  ')
-        html_str = f"""
-        <style>
-        p.a {{
-        font: bold {30}px Courier;
-        }}
-        </style>
-        <p class="a">{translation_text}</p>
-        """
-        st.markdown(html_str, unsafe_allow_html=True)
-        st.write('  ')
-
-        audio_file = open(f"temp_folder/{audio_file}.mp3", "rb")
-        audio_bytes = audio_file.read()
-        st.audio(audio_bytes, format="audio/mp3", start_time=0)
-
 
  
 if __name__ == "__main__":

@@ -26,7 +26,7 @@ def main():
     if choice == "Summarize":
         st.subheader("Summary with NLP")
         raw_text = st.text_area("Enter Text Here")
-        summary_choice = st.selectbox("Summary Choice", [Genism", "Sumy Lex Rank"])
+        summary_choice = st.selectbox("Summary Choice", ["Genism", "Sumy Lex Rank"])
                                                        
 
  

@@ -1,12 +1,18 @@
 #Python
 #importing the libraries
 import streamlit as st
-import gensim
-import sumy
-from gensim.summarization import summarize
+
+#NLP
+
+#Summary Pkgs
+from gensim.summarization import sumarize
+
+#sumy Sumary Pkgs
 from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lex_rank import LexRankSummarizer
+
+#Webscrapping Pkgs
 
 #main function
 def main():
@@ -23,18 +29,16 @@ def main():
 
     
     #give the user the option to choose between Text Summarization, Text processing and Translation
-    activity1 = ["Summarize","Text Preprocessing", "Translation"]
-    choice = st.sidebar.selectbox("Select Function",activity1)
+    activity1 = ["Summarize","Entity Checker", "Translation"]
+    choice = st.sidebar.selectbox("Select Activity",activity1)
+    
     if choice == "Summarize":
         st.subheader("Summary with NLP")
-        raw_text = st.text_area("Enter Text Here")
-        summary_choice = st.selectbox("Summary Choice", ["Genism", "Sumy Lex Rank"])
+        raw_text = st.text_area("Enter Text Here", "Type Here")
         if st.button("Summarize"):
-            if summary_choice == "Genism":
-                summary_result = summarize(raw_text)
-            elif summary_choice == "Sumy Lex Rank":
-                summary_result = sumy_summarizer(raw_text)
-                st.write(summary_result)
+            st.write(raw_text)
+    
+     if choice == "Entity Checker"
                 
            
                                                        

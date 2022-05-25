@@ -13,10 +13,12 @@ from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lex_rank import LexRankSummarizer
 
 #function for Sumy summarization
+docx= "C:\Users\ASUS\Desktop\Project LAB\fff_fulltext.txt"
 def sumy_summarizer(docx):
-    parser = PlaintextParser.from_string(docx, Tokenizer("english")
+    parser = PlaintextParser.from_docx(docx, Tokenizer("english"))
     lex_summarizer = LexRankSummarizer()
-    summary = lex_summarizer(parser.document,3)
+    #summarize the doc with 10 sentences
+    summary = lex_summarizer(parser.document,10)
     summary_list = [str(sentence) for sentence in summary]
     result = " ".join(summary_list)
     return result                                    

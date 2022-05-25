@@ -13,7 +13,6 @@ from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lex_rank import LexRankSummarizer
 
 #function for Sumy summarization
-docx= "C:\Users\ASUS\Desktop\Project LAB\fff_fulltext.txt"
 def sumy_summarizer(docx):
     parser = PlaintextParser.from_docx(docx, Tokenizer("english"))
     lex_summarizer = LexRankSummarizer()

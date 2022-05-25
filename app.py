@@ -12,6 +12,16 @@ from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lex_rank import LexRankSummarizer
 
+#function for Sumy summarization
+def sumy_summarizer(docx):
+    parser = PlaintextParser.from_string(docx, Tokenizer("english")
+    lex_summarizer = LexRankSummarizer()
+    summary = lex_summarizer(parser.document,3)
+    summary_list = [str(sentence) for sentence in summary]
+    result = " ".join(summary_list)
+    return result                                    
+                                         
+
 #Webscrapping Pkgs
 
 #main function
@@ -36,7 +46,13 @@ def main():
         st.subheader("Summary with NLP")
         raw_text = st.text_area("Enter Text Here", "Type Here")
         if st.button("Summarize"):
-            st.write(raw_text)
+           summary_choice = st.selectbox("Select choice", ["Gensim", "Sumy Lex Rank"])
+            if summary_choice == "Gensim":
+               summary_result = summarizer(raw_text)
+            elif summary_choice == "Sumy Lex Rank":
+               summary_result = sumy_summarizer(raw_text)                                                                                              
+            
+            st.write(summary_result)
     
      if choice == "Entity Checker"
                 

@@ -1,10 +1,10 @@
 #Python
 #importing the libraries
 import streamlit as st
-#from gensim.summarization import summarize
-#from sumy.parsers.plaintext import PlaintextParser
-#from sumy.nlp.tokenizers import Tokenizer
-#from sumy.summarizers.lex_rank import LexRankSummarizer
+from gensim.summarization import summarize
+from sumy.parsers.plaintext import PlaintextParser
+from sumy.nlp.tokenizers import Tokenizer
+from sumy.summarizers.lex_rank import LexRankSummarizer
 
 #main function
 def main():
@@ -27,6 +27,14 @@ def main():
         st.subheader("Summary with NLP")
         raw_text = st.text_area("Enter Text Here")
         summary_choice = st.selectbox("Summary Choice", ["Genism", "Sumy Lex Rank"])
+        if st.button("Summarize"):
+            if summary_choice == "Genism":
+                summary_result = summarize(raw_text)
+            elif summary_choice == "Sumy Lex Rank":
+                summary_result = sumy_summarizer(raw_text)
+                st.write(summary_result)
+                
+           
                                                        
 
  

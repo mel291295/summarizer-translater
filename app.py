@@ -47,12 +47,7 @@ def main():
         st.subheader("Summary with NLP")
         raw_text = st.text_area("Enter Text Here", "Type Here")
         if st.button("Summarize"):
-           summary_choice = st.selectbox("Select choice", ["Gensim", "Sumy Lex Rank"])
-            if summary_choice == "Gensim":
-               summary_result = summarizer(raw_text)
-            elif summary_choice == "Sumy Lex Rank":
-               summary_result = sumy_summarizer(raw_text)                                                                                              
-            
+           summary_choice = st.selectbox("Select choice", ["Gensim", "Sumy Lex Rank"])   
             st.write(summary_result)
     
      if choice == "Entity Checker"

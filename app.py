@@ -27,7 +27,8 @@ def sumy_summarizer(docx):
 
 #main function
 def main():
-    st.title("Summary and Text Preprocessing of Fairy Tales")
+    st.title("Once upon a time")
+    st.write("Summary, Translation and Text Preprocessing of Fairy Tales")
     
     #select fairytale
     option = st.selectbox("How would you like to be contacted?", ("Little Snow White", "The Ugly Duckling", "Aladdin and the Wonderful Lamp", "The Sleeping Beauty", "Beauty and the Beast", "The Story of Cinderella", "Hansel and Gretel"))

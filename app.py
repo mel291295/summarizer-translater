@@ -3,6 +3,7 @@
 import streamlit as st
 
 #Summary Pkgs
+import gensim
 from gensim.summarization.summarizer import summarize
 
 #sumy Sumary Pkgs

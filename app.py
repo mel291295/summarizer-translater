@@ -2,9 +2,6 @@
 #importing the libraries
 import streamlit as st
 
-#Summary Pkgs
-import gensim
-from gensim.summarization.summarizer import summarize
 
 #sumy Sumary Pkgs
 from sumy.parsers.plaintext import PlaintextParser

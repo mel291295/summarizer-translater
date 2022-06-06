@@ -1,3 +1,7 @@
 streamlit
 gensim==4.2.0
 sumy==0.10.0
+pandas== 2.8.1
+googletrans
+gtt
+

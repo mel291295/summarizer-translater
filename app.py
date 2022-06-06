@@ -1,6 +1,8 @@
 #!Python
 #importing the libraries
 import streamlit as st
+import stramlit.components.v1 as stc
+import pandas as pd
 
 
 #sumy Sumary Pkgs
@@ -30,7 +32,10 @@ def main():
   #select fairytale
   option = st.selectbox("How would you like to be contacted?", ("Little Snow White", "The Ugly Duckling", "Aladdin and the Wonderful Lamp", "The Sleeping Beauty", "Beauty and the Beast", "The Story of Cinderella", "Hansel and Gretel"))
   st.write('You selected:', option)
-  if option == "Little Snow White":
+    
+    uploaded_file = st.file_upoader("Upload Files", type = ["cvs"])
+                                    
+    if option == "Little Snow White":
         uploaded_file = st.file_uploader("")
         if uploaded_file:
             for line in uploaded_file:
